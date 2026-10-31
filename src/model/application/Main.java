@@ -32,18 +32,16 @@ public class Main {
             System.out.println("CheckOut date (dd/MM/yyyy)");
             checkOut = LocalDate.parse(ler.nextLine(),fmt);
 
-            LocalDate date = LocalDate.now();
-            if(checkIn.isBefore(date)|| checkOut.isBefore(date)){
-                System.out.println("Error in reservation : Reservation dates must be future dates");
+                String error = reservation.updateDates(checkIn,checkOut);
+                if(error != null){
+                    System.out.println("Error in reservation : "+error);
+                }
+                else{
+                    System.out.println("Reservation: "+reservation);
+                }
 
-            }
-            else if(!checkOut.isAfter(checkIn)){
-                System.out.println("Error in reservation : CheckOut must be after checkIn date");
-            }
-            else {
-                reservation.updateDates(checkIn,checkOut);
-                System.out.println("Reservation: "+reservation);
-            }
+
+
 //Versao muito ruim exceptions tudo na classe main
         }
 
