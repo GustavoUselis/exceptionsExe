@@ -44,7 +44,7 @@ public class Main {
                 reservation.updateDates(checkIn,checkOut);
                 System.out.println("Reservation: "+reservation);
             }
-
+//Versao muito ruim exceptions tudo na classe main
         }
 
 
